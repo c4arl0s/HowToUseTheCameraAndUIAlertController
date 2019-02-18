@@ -23,19 +23,26 @@ class ViewController:   UIViewController, UINavigationControllerDelegate,
         showActionSheet()
     }
     func showActionSheet() {
-        let actionSheet = UIAlertController(title: "Photos", message: "Select", preferredStyle: UIAlertController.Style.actionSheet)
-        actionSheet.addAction(UIAlertAction(title: "photoLibrary", style: UIAlertAction.Style.default, handler: { (alert:UIAlertAction!) -> Void in
+        let actionSheet = UIAlertController(title: "Photos",
+                                            message: "Select",
+                                            preferredStyle: UIAlertController.Style.actionSheet)
+        actionSheet.addAction(UIAlertAction(title: "photoLibrary",
+                                            style: UIAlertAction.Style.default,
+                                            handler: { (alert:UIAlertAction!) -> Void in
             self.photoLibrary()
         }))
         actionSheet.addAction(UIAlertAction(title: "Camera", style: UIAlertAction.Style.default, handler: { (alert:UIAlertAction!) -> Void in
             self.camera()
         }))
-        actionSheet.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
+        actionSheet.addAction(UIAlertAction(title: "Cancel",
+                                            style: UIAlertAction.Style.cancel,
+                                            handler: nil))
         self.present(actionSheet, animated: true, completion: nil)
     }
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
 // Local variable inserted by Swift 4.2 migrator.
-let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+        let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
 
         print("================1")
         let chosenImage = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as? UIImage
